@@ -1,6 +1,7 @@
 package com.demo.logging.service;
 
 import com.demo.logging.entities.LogServiceEntry;
+import com.demo.logging.entities.LogServiceResource;
 import com.google.cloud.MonitoredResource;
 import com.google.cloud.logging.*;
 
@@ -11,27 +12,32 @@ import java.util.Optional;
 
 public class LoggerService {
 
-    public void writeLogEntry(  String logName, LogServiceEntry logEntry,  Severity severity, String monitoredResource ) throws Exception {
+    public void writeLogEntry(  String logName, LogServiceEntry logEntry ) throws Exception {
 
         try (Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
-            Optional<Map<String, String>> payloadOptional =  Optional.of(logEntry.getJsonPayload());
-            Map<String, String> payLoad = payloadOptional.map( data -> data  ).orElse( new HashMap<>() );
+            Map<String, String> payLoad = Optional.ofNullable(logEntry.getJsonPayload() ).orElse( new HashMap<>() );
 
-            Optional<Map<String,String>> labelsOptional = Optional.of( logEntry.getLabels() );
-            Map<String, String> labels = labelsOptional.map( data -> data ).orElse( new HashMap<>() );
+            Map<String, String> labels = Optional.ofNullable( logEntry.getLabels() ).orElse( new HashMap<>() );
 
-            Optional<Map<String, String>> operationMap =  Optional.of(logEntry.getOperation() );
-            Operation operation = operationMap
+            Optional<LogServiceResource> optionalResource =  Optional.ofNullable(logEntry.getResource());
+            String type =  optionalResource.map(  resource ->  resource.getType() ).orElse("global");
+            Map<String,String> resourceLabels = optionalResource.map( resource-> resource.getLabels() ).orElse( new HashMap<>() );
+
+            Operation operation = Optional.ofNullable(logEntry.getOperation() )
                     .map( map -> Operation.newBuilder(map.get("id"), map.get("producer")).build()  )
-                    .orElse(  Operation.newBuilder("id", "producer").build()  );
+                    .orElse(null);
+
+            Severity severity = Optional.ofNullable(logEntry.getSeverity() ).orElse( Severity.INFO );
+
+            System.out.println( "severitiy is " + severity );
 
             LogEntry entry =
                     LogEntry.newBuilder(Payload.JsonPayload.of(payLoad))
                             .setSeverity( severity )
                             .setLogName(logName)
-                            .setResource(MonitoredResource.newBuilder( monitoredResource ).build())
                             .setLabels(labels)
+                            .setResource(MonitoredResource.newBuilder( type ).setLabels(  resourceLabels ).build()  )
                             .setOperation(operation)
                             .build();
 

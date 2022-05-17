@@ -1,6 +1,7 @@
 {
   "insertId": "du6pf13vs65",
   "jsonPayload": {
+    "event": "NODE_CORDON",
     "favorite_color": "Blue",
     "name": "King Arthur",
     "quest": "Find the Holy Grail"
@@ -8,7 +9,8 @@
   "labels": {
     "privider1": "GCP",
     "provider2": "Azure",
-    "provider3": "AWS"
+    "provider3": "AWS",
+    "cloud_provider": "google"
   },
   "logName": "projects/devops-project-training/logs/test-log",
   "operation": {
@@ -18,10 +20,13 @@
   "receiveTimestamp": "2022-05-17T00:33:37.417277052Z",
   "resource": {
     "labels": {
-      "project_id": "devops-project-training"
+      "project_id": "devops-project-training",
+      "location": "us-central",
+      "cluster_name": "dev-cluster",
+      "container_name": "podman"
     },
-    "type": "global"
+    "type": "k8s_container"
   },
-  "severity": "INFO",
+  "severity": "WARNING",
   "timestamp": "2022-05-17T00:33:37.417277052Z"
 }

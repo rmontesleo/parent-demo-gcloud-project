@@ -1,5 +1,6 @@
 package com.demo.logging.entities;
 
+import com.google.cloud.logging.Severity;
 import lombok.*;
 
 import java.util.Map;
@@ -14,6 +15,10 @@ public class LogServiceEntry {
     private Map<String,String> jsonPayload;
 
     private Map<String,String> operation;
+
+    private LogServiceResource resource;
+
+    private Severity severity;
 
 
 }

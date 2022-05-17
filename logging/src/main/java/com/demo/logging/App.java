@@ -3,12 +3,7 @@ package com.demo.logging;
 import com.demo.logging.entities.LogServiceEntry;
 import com.demo.logging.service.JsonParserService;
 import com.demo.logging.service.LoggerService;
-import com.google.cloud.MonitoredResource;
-import com.google.cloud.logging.Severity;
 import org.json.simple.JSONObject;
-
-import java.io.File;
-
 
 /**
  * Hello world!
@@ -26,7 +21,7 @@ public class App
         System.out.println( logServiceEntry );
 
         LoggerService loggerService = new LoggerService();
-        loggerService.writeLogEntry( "test-log-v2", logServiceEntry, Severity.INFO, "global" );
+        loggerService.writeLogEntry( "test-log-v9", logServiceEntry );
 
     }
 }
