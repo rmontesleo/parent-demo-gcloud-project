@@ -1,0 +1,27 @@
+{
+  "insertId": "du6pf13vs65",
+  "jsonPayload": {
+    "favorite_color": "Blue",
+    "name": "King Arthur",
+    "quest": "Find the Holy Grail"
+  },
+  "labels": {
+    "privider1": "GCP",
+    "provider2": "Azure",
+    "provider3": "AWS"
+  },
+  "logName": "projects/devops-project-training/logs/test-log",
+  "operation": {
+    "id": "abc",
+    "producer": "producer"
+  },
+  "receiveTimestamp": "2022-05-17T00:33:37.417277052Z",
+  "resource": {
+    "labels": {
+      "project_id": "devops-project-training"
+    },
+    "type": "global"
+  },
+  "severity": "INFO",
+  "timestamp": "2022-05-17T00:33:37.417277052Z"
+}
