@@ -2,6 +2,7 @@ package com.demo.logging.dto;
 
 import java.util.Map;
 
+import com.google.cloud.logging.HttpRequest;
 import com.google.cloud.logging.Operation;
 import com.google.cloud.logging.Severity;
 

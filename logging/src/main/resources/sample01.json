@@ -1,5 +1,6 @@
 {
-  "insertId": "du6pf13vs65",
+  "textPayload" : "Hello text PayLoad",
+
   "jsonPayload": {
     "event": "NODE_CORDON",
     "favorite_color": "Blue",
@@ -12,12 +13,10 @@
     "provider3": "AWS",
     "cloud_provider": "google"
   },
-  "logName": "projects/devops-project-training/logs/test-log",
   "operation": {
     "id": "abc",
     "producer": "producer"
   },
-  "receiveTimestamp": "2022-05-17T00:33:37.417277052Z",
   "resource": {
     "labels": {
       "project_id": "devops-project-training",
@@ -27,6 +26,5 @@
     },
     "type": "k8s_container"
   },
-  "severity": "WARNING",
-  "timestamp": "2022-05-17T00:33:37.417277052Z"
+  "severity": "WARNING"
 }

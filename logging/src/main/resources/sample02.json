@@ -1,5 +1,4 @@
 {
-  "insertId": "du6pf13vs65",
   "jsonPayload": {
     "event": "NODE_CORDON",
     "favorite_color": "Red",
@@ -9,8 +8,5 @@
   "labels": {
     "cloud_provider": "google"
   },
-  "logName": "projects/devops-project-training/logs/test-log",
-  "receiveTimestamp": "2022-05-17T00:33:37.417277052Z",
-  "severity": "ERROR",
-  "timestamp": "2022-05-17T00:33:37.417277052Z"
+  "severity": "ERROR"
 }
