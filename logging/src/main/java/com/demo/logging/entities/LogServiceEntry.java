@@ -20,5 +20,7 @@ public class LogServiceEntry {
 
     private Severity severity;
 
+    private String textPayload;
+
 
 }

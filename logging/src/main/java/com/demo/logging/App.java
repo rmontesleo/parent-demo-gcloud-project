@@ -21,7 +21,7 @@ public class App
         System.out.println( logServiceEntry );
 
         LoggerService loggerService = new LoggerService();
-        loggerService.writeLogEntry( "test-log-v9", logServiceEntry );
+        loggerService.writeJsonLogEntry( "test-log-v9", logServiceEntry );
 
     }
 }

@@ -10,7 +10,6 @@ import java.util.Map;
 @Setter
 @ToString
 public class LogServiceResource {
-
     private String type;
     private Map<String,String> labels;
 }
