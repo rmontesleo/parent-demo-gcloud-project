@@ -12,11 +12,11 @@ gcloud projects add-iam-policy-binding <PROJECT_ID> --member="serviceAccount:<AC
 
 ### Create a file with the credentials
 ```bash
-gcloud iam service-accounts keys create <FILE_NAME>.json --iam-account=<ACCOUNT_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
+gcloud iam service-accounts keys create <CREDENTIALS_FILE_NAME>.json --iam-account=<ACCOUNT_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
 ```
 
 
 ### Define a variable to get access to your credentials
 ```bash
-export GOOGLE_APPLICATION_CREDENTIALS="KEY_PATH"
+export GOOGLE_APPLICATION_CREDENTIALS=<FUL_PATH_TO_CREDENTIALS_FILE_NAME>.json
 ```
